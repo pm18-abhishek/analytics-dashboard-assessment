@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 
 export default function Home() 
 {
+
   const [ theme, setTheme ] = useState('');
 
   useEffect(()=>
@@ -14,9 +15,9 @@ export default function Home()
   },[])
 
   return (
-    <div className={theme === "light" ? "text-black " : "text-white bg-black"}>
+    <div>
       <Navbar theme={theme} setTheme={setTheme}/>
-      <Dashboard/>
+      <Dashboard theme={theme}/>
     </div>
   );
 }

@@ -3,7 +3,7 @@
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from "recharts";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 
 const AreaChartComponent = ({data, xLabel, yLabel, title}) => 
 {
@@ -20,7 +20,10 @@ const AreaChartComponent = ({data, xLabel, yLabel, title}) =>
 		const upper = Number(upperLimit);
 
 		if(lower >= upper)
-			return alert('Invalid input')	//Lower limit (year) cannot be more than upper
+		{
+			toast('Max year limit cannot be lower than Min year limit. Try again!')			//Lower limit (year) cannot be more than upper
+			return
+		}
 
 		const filteredData = data.slice(lower, upper+1);	//filtering from lower to upper limit
 		setAreaData(filteredData);

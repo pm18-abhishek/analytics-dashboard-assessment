@@ -12,6 +12,7 @@ import PieChartComponent from '../charts/PieChartComponent';
 import MakeToolTip from '../customTooltips/MakeToolTip';
 import UtilityToolTip from '../customTooltips/UtilityToolTip';
 import IndicatorCard from './IndicatorCard';
+import { CircularProgress } from '@mui/material';
 
 const Dashboard = ( )=>
 {
@@ -228,7 +229,10 @@ const Dashboard = ( )=>
     },[]) 
     
     if(!data)
-        return <>Loading</>
+        return(
+            <div className='h-screen flex align-middle justify-center'>
+                <CircularProgress color="#6366F1" />
+            </div>)
 
     return(
         <div className="px-[5vw] py-8 grid gap-4">
