@@ -230,7 +230,7 @@ const Dashboard = ( )=>
     
     if(!data)
         return(
-            <div className='h-screen flex align-middle justify-center'>
+            <div className='h-screen flex items-center justify-center'>
                 <CircularProgress color="#6366F1" />
             </div>)
 

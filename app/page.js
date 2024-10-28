@@ -15,9 +15,9 @@ export default function Home()
   },[])
 
   return (
-    <div>
+    <div className={theme === "light" ? 'bg-white' : 'bg-black text-white'}>
       <Navbar theme={theme} setTheme={setTheme}/>
-      <Dashboard theme={theme}/>
+      <Dashboard />
     </div>
   );
 }
